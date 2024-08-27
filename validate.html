@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function valid() {
+            let name = a1.username.value
+            if (!name) {
+                alert("Enter your name:")
+                return false;
+            }
+            if (name.length < 5 || name.length > 8) {
+                alert("enter a min 5 and maximum 8 letters")
+                return false;
+            }
+
+            let num = 0;
+            for (let i = 0; i < name.length; i++) {
+                if (name.charCodeAt(i) >= 48 && name.charCodeAt(i) <= 51) {
+                    num++;
+                }
+            }
+
+            if (num === 1) {
+                alert("You cannot enter any number in the username");
+                return false;
+            }
+
+            let cap = 0;
+            for (let i = 0; i < name.length; i++) {
+                if (name.charCodeAt(i) >= 65 && name.charCodeAt(i) <= 90) {
+                    cap++;
+                }
+            }
+
+            if (cap === 0) {
+                alert("You need to enter at least one capital letter");
+                return false;
+            }
+
+            let pass = a1.password.value
+            if (!pass) {
+                alert("Please enter the password")
+                return false;
+            }
+            if (pass.length < 6) {
+                alert("password length is very short ")
+                return false;
+            }
+            if (pass.length > 12) {
+                alert("password length is big ")
+                return false;
+            }
+            let capi = 0
+            for (let i = 0; i < pass.length; i++) {
+                if (pass.charCodeAt(i) >= 65 && pass.charCodeAt(i) <= 90) {
+                    capi++
+                }
+            }
+            if (capi === 0) {
+                alert("You need  enter to atleast 1 capital letter")
+                return false;
+            }
+
+            let low = 0
+            for (let i = 0; i < pass.length; i++) {
+                if (pass.charCodeAt(i) >= 97 && pass.charCodeAt(i) <= 122) {
+                    low++
+                }
+            }
+            if (low === 0) {
+                alert("You need to enter  atleast 1 lowercase letter")
+                return false;
+            }
+
+            let spe = 0
+            for (let i = 0; i < pass.length; i++) {
+                if (pass.charCodeAt(i) >= 33 && pass.charCodeAt(i) <= 47) {
+                    spe++
+                }
+            }
+            if (spe === 0) {
+                alert("You need to enter  atleast 1 special character ")
+                return false;
+            }
+            let number = 0
+            for (let i = 0; i < pass.length; i++) {
+                if (pass.charCodeAt(i) >= 48 && pass.charCodeAt(i) <= 51) {
+                    number++
+                }
+            }
+            if (number == 0) {
+                alert("You need to add atleast 1 number")
+                return false;
+            }
+            let cpass = a1.cpassword.value
+            if (!cpass) {
+                alert("this field is mandotory")
+                return false;
+            }
+            if (cpass !== pass) {
+                alert("password dosesn't match")
+                return false;
+            }
+            let mail = a1.email.value
+            if (!mail) {
+                alert("email is mandatory")
+                return false
+            }
+            let atposition = mail.indexOf("@");
+            let dotposition = mail.lastIndexOf(".");
+            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= mail.length) {
+                alert("please enter a valid email address")
+                return false
+            }
+            let ph = a1.phone.value
+            if (!ph) {
+                alert("contact field required")
+                return false
+            }
+            if (ph.length > 10 && ph.length < 10) {
+                alert("contact number must 10 digit")
+                return false
+            }
+            let gen = a1.Gender.value
+            if (gen) {
+                alert(document.radioButton.container[0].checked);
+                if (document.radioButton.container[0].checked == false) {
+                    alert("Please select any one");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <form name="a1" onsubmit="return valid()">
+            <tr><label>Username</label>
+                <input type="text" name="username" required>
+            </tr>
+            <tr>
+                <td><label for="password">password</label> <input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="cpassword">confirm-password</label> <input type="password" name="cpassword"> </td>
+            </tr>
+            <tr>
+                <td><label for="Email">Email</label> <input type="email" name="email"> </td>
+            </tr>
+            <tr>
+                <td><label for="phone">phone</label><input type="phone" name="" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="Gender">Gender</label><input type="radio" name="Gender" value="Male">Male
+                    <input type="radio" name="Gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

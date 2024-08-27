@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: cornflowerblue;
+        }
+
+        table {
+            background-color: chocolate;
+        }
+    </style>
+
+    <script>
+        function validation() {
+            let nameInput = document.getElementById("name");
+            let name = nameInput.value;
+            let nameError = document.getElementById("n1");
+
+            if (!name) {
+                nameError.innerHTML = "<i>enter name</i>";
+                nameInput.style.border = "2px solid red";
+                return false;
+            }
+
+            let num = 0;
+            for (let i = 0; i < name.length; i++) {
+                if (isNaN(name[i])) {
+                    num++;
+                }
+            }
+
+            if (num === 0) {
+                nameError.innerHTML = "<i>You cannot enter any number in the username</i>";
+                nameInput.style.border = "2px solid red";
+                return false;
+            }
+
+            if (name.length < 3 || name.length > 8) {
+                nameError.innerHTML = "<i>enter a minimum of 3 and a maximum of 8 letters</i>";
+                nameInput.style.border = "2px solid red";
+                return false;
+            } else {
+                nameError.innerHTML = "";
+                nameInput.style.border = "2px solid green";
+            }
+
+            let lnameInput = document.getElementById("surname");
+            let lname = lnameInput.value;
+            let lnameError = document.getElementById("n2");
+
+            if (!lname) {
+                lnameError.innerHTML = "<i>enter surname</i>";
+                lnameInput.style.border = "2px solid red";
+                return false;
+            }
+
+            let num1 = 0;
+            for (let i = 0; i < lname.length; i++) {
+                if (isNaN(lname[i])) {
+                    num1++;
+                }
+            }
+
+            if (num1 === 0) {
+                lnameError.innerHTML = "<i>You can't enter any number in the surname</i>";
+                lnameInput.style.border = "2px solid red";
+                return false;
+            }
+
+            if (lname.length < 3 || lname.length > 8) {
+                lnameError.innerHTML = "<i>enter a minimum of 3 and a maximum of 8 letters</i>";
+                lnameInput.style.border = "2px solid red";
+                return false;
+            } else {
+                lnameError.innerHTML = "";
+                lnameInput.style.border = "2px solid green";
+            }
+
+            let mailInput = document.getElementById("email");
+            let mail = mailInput.value;
+            let mailError = document.getElementById("e1");
+
+            if (!mail) {
+                mailError.innerHTML = "<i>Enter Email</i>";
+                mailInput.style.border = "2px solid red";
+                return false;
+            }
+             else {
+                mailError.innerHTML = "";
+                mailInput.style.border = "2px solid green";
+            }
+
+
+            let phoneInput = document.getElementById("phone");
+            let phone = phoneInput.value;
+            let phoneError = document.getElementById("e2");
+
+            if (!phone) {
+                phoneError.innerHTML = "<i>Enter Phone</i>";
+                phoneInput.style.border = "2px solid red";
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                phoneError.innerHTML = "<i>please enter a valid number</i>";
+                phoneInput.style.border = "2px solid red";
+                return false;
+            } else {
+                phoneError.innerHTML = "";
+                phoneInput.style.border = "2px solid green";
+            }
+
+            let msgInput = document.getElementById("message");
+            let msg = msgInput.value;
+            let msgError = document.getElementById("m1");
+
+            if (!msg) {
+                msgError.innerHTML = "<i>Enter Message please</i>";
+                msgInput.style.border = "2px solid red";
+                return false;
+            } else {
+                msgError.innerHTML = "";
+                msgInput.style.border = "2px solid green";
+            }
+
+            let condnInput = document.getElementById("condition");
+            let cond = condnInput.checked;
+            let condError = document.getElementById("check");
+
+            if (!cond) {
+                condError.innerHTML = "<i>Please agree to the terms and conditions</i>";
+                condError.style.color = "red";
+                return false;
+            } else {
+                condError.innerHTML = "";
+                condError.style.color = "green";
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+    <table align="center" cellpadding="15px">
+        <form onsubmit="return validation()">
+            <h1 style="text-align: center;">Get in touch</h1>
+            <tr>
+                <td>
+                    <select>
+                        <option>--please choose an option--</option>
+                        <option>For corporate</option>
+                        <option>For reaching</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" name="name" id="name" placeholder="Name"><span id="n1"></span></td>
+                <td><input type="text" name="surname" id="surname" placeholder="Surname"><span id="n2"></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="email" name="email" id="email" placeholder="Email"><span id="e1"></span></td>
+                <td><input type="text" name="phone" id="phone" placeholder="Phone"><span id="e2"></span></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><textarea name="message" id="message" cols="47" rows="10"></textarea><span
+                        id="m1"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="checkbox" name="condition" id="condition">I have read and agreed
+                    with the terms and conditions<span id="check"></span></td>
+            </tr>
+
+
+            <tr>
+                <td> required fields *</td>
+                <td><input type="submit" value="submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </form>
+    </table>

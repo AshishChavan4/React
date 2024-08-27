@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <script>
+    // function fun(){
+    // let n1=prompt("Enter number 1")
+    // let op=prompt("Enter operator:")       
+    // let n2=prompt("Enter number 2")
+    // if(n1,op,n2){
+    //     let c=confirm("Do you want answer?")
+    //     if(c){
+    //         if(op=="+"){
+    //             alert(n1+op+n2+"="+(Number (n1)+Number(n2)))
+    // } 
+    // if(op=="-"){
+    //     alert(n1+op+n2+"="+(Number (n1)-Number(n2)))
+    // } 
+    // if(op=="*"){
+    //     alert(n1+op+n2+"="+(Number (n1)*Number(n2)))
+    // } 
+    // if(op=="/"){
+    //     alert(n1+op+n2+"="+(Number (n1)/Number(n2)))
+    // } 
+    //     }else{
+    //         alert("Process exited")
+    //     }
+    // } 
+    // }
+    function dat(){
+      let data = prompt("Here is show a small text")
+
+      let sl = data.length;
+      let Uppercase = "";
+      let lowercase = "";
+   
+      if (data) {
+        for (let i = 0; i < sl; i++) {
+          if (data.charAt(i) === data.charAt(i).toUpperCase()) {
+            Uppercase = Uppercase + data.charAt(i)
+          }
+          if (data.charAt(i) === data.charAt(i).toLowerCase()) {
+            lowercase = lowercase + data.charAt(i)
+          }
+        }
+        
+        alert("Uppercase letters:" + Uppercase)
+        alert("Lowercase letters:" + lowercase)
+      }
+    }
+</script>
+<body>
+  <input type="button" value="Submit" onclick="fun()">
+  <input type="button" value="Value" onclick="dat()">
+</body>
+</html>

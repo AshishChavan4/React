@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            // let name=document.getElementById("uname").value
+            // if(!name){
+            //     document.getElementById("sp1").innerText="enter name"
+            //     document.getElementById("uname").style.border="2px solid red"
+            //     return false
+            // }
+            let unameInput=document.getElementById("uname")
+            let uname=unameInput.value
+            let unameError=document.getElementById("sp1")
+
+            if(!uname){
+                unameError.innerHTML="<i>enter name</i>"
+                unameInput.style.border="2px solid red"
+                return false
+            }else{
+                unameError.innerHTML=""
+                unameInput.style.border="2px solid green"
+            }
+
+            let passInput=document.getElementById("pass")
+            let pass=passInput.value
+            let passError=document.getElementById("sp2")
+            if(!pass){
+                passError.innerHTML="<i>enter pass</i>"
+                passInput.style.border="2px solid red"
+                return false
+            }
+
+        }
+    </script>
+    <style>
+        span{
+            color:red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <input type="text" name="uname" id="uname"><span id="sp1" ></span> <br/>
+        <input type="text" name="pass" id="pass"><span id="sp2"></span> <br/>
+        <input type="submit" >
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h1 class="a1">Hello Javascript</h1>
+    <h1 class="a1">Hello Javascript 2</h1>
+    <h1 class="a2">Hello Dom</h1>
+    <h1 id="a1">Hello Javascript validation</h1>
+    <h1 id="a4">Hello Javascript global</h1>
+<h2 class="g1">Hey</h2>
+<h2 class="r1">This is imp</h2>
+    <script>
+document.getElementsByClassName("g1")[0].style.background="gold";
+document.querySelector(".r1").style.background="green";
+
+
+document.getElementById("a1").style.background="red";
+document.getElementsByTagName("h1")[0].style.background="bisque";
+let h1length=document.getElementsByTagName("h1").length
+for(let i=0;i<h1length;i++){
+    document.getElementsByTagName("h1")[i].style.background="bisque";
+}
+
+
+    </script>
+</body>
+</html>

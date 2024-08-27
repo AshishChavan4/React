@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            let name=f1.username.value
+            if(!name){
+                alert("enter name")
+                return false
+            }
+            if(name.length<5 || name.length>10){
+                alert("enter naem btwn 5-10 char..")
+                return false
+            }
+            let capCount=0
+            for(let i=0;i<name.length;i++){
+                if(name.charCodeAt(i)>=65 && name.charCodeAt(i)<=90){
+                    capCount++
+                }
+            }
+            if(capCount==0){
+                alert("enter atlest one cap char...")
+                return false
+            }
+            let pass=f1.pass.value
+            if(!pass){
+                alert("enter pass")
+                return false
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f1" onsubmit="return validate()">
+        <input type="text" name="username">
+        <input type="text" name="pass">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>

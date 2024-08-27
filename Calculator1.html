@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#calci{
+    background-color: cornflowerblue;
+    text-align: center;
+}
+#screen{
+    width: 250px;
+    height: 30px;
+    background-color: azure;
+}
+button{
+    width: 60px;
+    height: 30px;
+}
+    </style>
+    
+</head>
+<body>
+<table id="calci" border="2px"   align="center">
+<form name="calci" >
+<tr><th colspan="4" ><input type="text" name="screen" id="screen" ></th></tr>
+<tr><td class="cal"><button type="reset" value="AC" onclick="calci.screen.value+='reset'">AC</button></td>
+    <td><button type="button" onclick="calci.screen.value+='%'">%</button></td>
+    <td><button type="button" onclick="calci.screen.value+=''">''</button></td>
+    <td><button type="button" onclick="calci.screen.value+='/'">/</button></td>
+</tr>
+<tr><td><button type="button" value="7" onclick="calci.screen.value+='7'">7</button></td>
+    <td><button type="button"value="8" onclick="calci.screen.value+='8'">8</button></td>
+    <td><button type="button" value="9" onclick="calci.screen.value+='9'">9</button></td>
+    <td><button type="button" value="*" onclick="calci.screen.value+='*'">* </button></td>                                                           </button></td>
+</tr>
+<tr><td><button type="button" value="4" onclick="calci.screen.value+='4'">4</button></td>
+    <td><button type="button" value="5" onclick="calci.screen.value+='5'">5</button></td>
+    <td><button type="button" value="6" onclick="calci.screen.value+='6'">6</button></td>
+    <td><button type="button" value="-" onclick="calci.screen.value+='-'">-</button></td>
+</tr>
+<tr><td><button type="button" value="1" onclick="calci.screen.value+='1'">1</button></td>
+    <td><button type="button" value="2" onclick="calci.screen.value+='2'">2</button></td>
+    <td><button type="button" value="3" onclick="calci.screen.value+='3'">3</button></td>
+    <td><button type="button" value="+" onclick="calci.screen.value+='+'">+</button></td>
+</tr>
+<tr><td><button type="button"  onclick="calci.screen.value+='00'">00</button></td>
+    <td><button type="button"  onclick="calci.screen.value+='0'">0</button></td>
+    <td><button type="button"  onclick="calci.screen.value+='.'">.</button></td>
+    <td><button type="button" value="''" onclick="calci.screen.value=eval(calci.screen.value)">=</button></td>
+</tr>
+
+</form>
+
+</table>
+
+  </html>
+   
+</body>
+</html>
